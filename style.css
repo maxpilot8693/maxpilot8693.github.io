@@ -1,0 +1,250 @@
+/* Custom CSS for Currency Converter */
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Enhanced focus states for accessibility */
+input:focus,
+select:focus,
+button:focus {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+  box-shadow: 0 2px 6px rgba(59,130,246,0.12);
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Hover effects */
+.hover-lift:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease-out;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .mobile-nav {
+    display: block;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  /* Mobile-first responsive design */
+  .mobile-stack > * {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  /* Larger touch targets for mobile */
+  button,
+  input,
+  select {
+    min-height: 44px;
+  }
+
+  /* Better mobile typography */
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  nav,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    color: black;
+    background: white;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bg-gray-50 {
+    background-color: #ffffff;
+  }
+
+  .text-gray-600 {
+    color: #000000;
+  }
+
+  .border-gray-300 {
+    border-color: #000000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Custom utility classes */
+.text-shadow {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Table enhancements */
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.75rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #eef2f6;
+}
+
+th {
+  font-weight: 600;
+  background-color: #f8fafc;
+}
+
+tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* Form enhancements */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Currency symbols styling */
+.currency-symbol {
+  font-weight: 600;
+  color: #6b7280;
+}
+
+/* Rate change indicators */
+.rate-up {
+  color: #059669;
+  font-weight: 600;
+}
+
+.rate-down {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.rate-up::before {
+  content: '↗';
+  margin-right: 0.25rem;
+}
+
+.rate-down::before {
+  content: '↘';
+  margin-right: 0.25rem;
+}
+
+/* Loading spinner */
+.spinner {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #3B82F6;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Flag icons enhancement */
+.flag-icon {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+}
+
+/* Advertisement placeholder styling */
+.ad-placeholder {
+  background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%),
+              linear-gradient(-45deg, #f0f0f0 25%, transparent 25%),
+              linear-gradient(45deg, transparent 75%, #f0f0f0 75%),
+              linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* SEO-friendly hidden text */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Small utility spacing */
+.u-mt-4 { margin-top: 1rem; }
+.u-mb-4 { margin-bottom: 1rem; }
+.u-p-2 { padding: .5rem; }
+
+/* Responsive improvements for table on very small screens */
+@media (max-width: 420px) {
+  th, td { padding: .5rem; font-size: 0.9rem; }
+  .text-2xl { font-size: 1.25rem; }
+}
+
+/* Footer small print */
+.footer-small { font-size: 0.85rem; color:#9CA3AF; }
+
+/* End of stylesheet */

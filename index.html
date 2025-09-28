@@ -3,12 +3,278 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting...</title>
-  <meta http-equiv="refresh" content="0; url=https://maxpilot8693.github.io/exchange-rates/">
+  <title>USD to KES Exchange Rate Today | Kenya Currency Converter</title>
+  <meta name="description" content="Live USD to KES exchange rates with real-time conversion. Convert US Dollars to Kenyan Shillings instantly. Updated rates from Central Bank of Kenya (CBK).">
+  <meta name="keywords" content="USD to KES, dollar to shilling, currency converter, exchange rate, Kenya shilling, US dollar">
+  <link rel="canonical" href="https://maxpilot8693.github.io/exchange-rates/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="USD to KES Exchange Rate Today | Kenya Currency Converter">
+  <meta property="og:description" content="Live USD to KES exchange rates with real-time conversion. Convert US Dollars to Kenyan Shillings instantly.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maxpilot8693.github.io/exchange-rates/">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="USD to KES Exchange Rate Today | Kenya Currency Converter">
+  <meta name="twitter:description" content="Live USD to KES exchange rates with real-time conversion.">
+  <meta name="twitter:url" content="https://maxpilot8693.github.io/exchange-rates/">
+  <meta name="google-adsense-account" content="ca-pub-1635247009771849">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Kenya Currency Converter",
+    "url": "https://maxpilot8693.github.io/exchange-rates/",
+    "description": "Live currency converter focusing on USD to KES and other major currencies",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://maxpilot8693.github.io/exchange-rates/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Kenya Currency Converter",
+    "url": "https://maxpilot8693.github.io/exchange-rates/",
+    "description": "Professional currency conversion service for Kenyan and international currencies"
+  }
+  </script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XHJ5S23NHY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XHJ5S23NHY');
+  </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1635247009771849"
-     crossorigin="anonymous"></script>
+     crossorigin="anonymous">
+     </script>
 </head>
-<body>
-  <p>If you are not redirected, <a href="https://maxpilot8693.github.io/exchange-rates/">click here</a>.</p>
+
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-gray-900">🇰🇪 Kenya Currency Converter</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-blue-600 hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="usd-to-kes.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">USD/KES</a>
+                        <a href="eur-to-kes.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">EUR/KES</a>
+                        <a href="gbp-to-kes.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">GBP/KES</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Hero Section -->
+        <section class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">Live USD to KES Exchange Rate</h1>
+            <p class="text-xl text-gray-600 mb-6">Convert US Dollars to Kenyan Shillings with real-time rates from Central Bank of Kenya (CBK)</p>
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 inline-block">
+                <p class="text-blue-800 font-semibold">Current Rate: 1 USD = <span id="current-rate">Loading...</span> KES</p>
+                <p class="text-blue-600 text-sm">Last updated: <span id="last-updated">Loading...</span></p>
+            </div>
+        </section>
+
+        
+        
+
+        <!-- Currency Converter -->
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Currency Converter</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6 items-end">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">From</label>
+                    <select id="from-currency" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="USD" selected>USD - US Dollar</option>
+                        <option value="EUR">EUR - Euro</option>
+                        <option value="GBP">GBP - British Pound</option>
+                        <option value="JPY">JPY - Japanese Yen</option>
+                        <option value="AUD">AUD - Australian Dollar</option>
+                        <option value="CAD">CAD - Canadian Dollar</option>
+                        <option value="CHF">CHF - Swiss Franc</option>
+                        <option value="CNY">CNY - Chinese Yuan</option>
+                        <option value="KES">KES - Kenyan Shilling</option>
+                    </select>
+                    <input type="number" id="from-amount" class="w-full p-3 border border-gray-300 rounded-lg mt-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Enter amount" value="1">
+                </div>
+
+                <div class="text-center">
+                    <button id="swap-currencies" class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">To</label>
+                    <select id="to-currency" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="KES" selected>KES - Kenyan Shilling</option>
+                        <option value="USD">USD - US Dollar</option>
+                        <option value="EUR">EUR - Euro</option>
+                        <option value="GBP">GBP - British Pound</option>
+                        <option value="JPY">JPY - Japanese Yen</option>
+                        <option value="AUD">AUD - Australian Dollar</option>
+                        <option value="CAD">CAD - Canadian Dollar</option>
+                        <option value="CHF">CHF - Swiss Franc</option>
+                        <option value="CNY">CNY - Chinese Yuan</option>
+                    </select>
+                    <input type="text" id="to-amount" class="w-full p-3 border border-gray-300 rounded-lg mt-2 bg-gray-50" readonly placeholder="Converted amount">
+                </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                <p class="text-center text-gray-700" id="conversion-result">
+                    Enter an amount to see the conversion
+                </p>
+            </div>
+        </section>
+
+        <!-- Popular Currency Pairs -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Popular Kenya Currency Pairs</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="usd-to-kes.html" class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6 block">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">USD to KES</h3>
+                    <p class="text-gray-600 mb-4">US Dollar to Kenyan Shilling</p>
+                    <p class="text-2xl font-bold text-blue-600" id="usd-kes-rate">Loading...</p>
+                </a>
+                <a href="eur-to-kes.html" class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6 block">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">EUR to KES</h3>
+                    <p class="text-gray-600 mb-4">Euro to Kenyan Shilling</p>
+                    <p class="text-2xl font-bold text-blue-600" id="eur-kes-rate">Loading...</p>
+                </a>
+                <a href="gbp-to-kes.html" class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6 block">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">GBP to KES</h3>
+                    <p class="text-gray-600 mb-4">British Pound to Kenyan Shilling</p>
+                    <p class="text-2xl font-bold text-blue-600" id="gbp-kes-rate">Loading...</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- AdSense Banner Space -->
+      
+
+        <!-- Exchange Rate Table -->
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Live Exchange Rates to KES</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full table-auto">
+                    <thead>
+                        <tr class="bg-gray-50">
+                            <th class="px-4 py-3 text-left text-sm font-medium text-gray-700">Currency</th>
+                            <th class="px-4 py-3 text-left text-sm font-medium text-gray-700">Rate (1 unit to KES)</th>
+                            <th class="px-4 py-3 text-left text-sm font-medium text-gray-700">Change</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rates-table">
+                        <!-- Rates will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Money Transfer Affiliate Section -->
+        <section class="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-8 mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Send Money to Kenya</h2>
+            <p class="text-gray-700 mb-6">Compare the best money transfer services for sending money to Kenya with competitive rates and low fees.</p>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-white rounded-lg p-4 shadow">
+                    <h3 class="font-semibold text-gray-900 mb-2">Remitly</h3>
+                    <p class="text-sm text-gray-600">Fast, secure transfers to Kenya</p>
+                    <a href="#" class="inline-block mt-2 bg-green-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700">Learn More</a>
+                </div>
+                <div class="bg-white rounded-lg p-4 shadow">
+                    <h3 class="font-semibold text-gray-900 mb-2">Wise (formerly TransferWise)</h3>
+                    <p class="text-sm text-gray-600">Real exchange rate, low fees</p>
+                    <a href="#" class="inline-block mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="bg-white rounded-xl shadow-lg p-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">What is the current USD to KES exchange rate?</h3>
+                    <p class="text-gray-700">The current USD to KES exchange rate is updated in real-time using data from reliable financial sources. Check the converter above for the most current rate.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">How often are the exchange rates updated?</h3>
+                    <p class="text-gray-700">Our exchange rates are updated every few minutes during market hours to ensure you get the most accurate and current rates available.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Are these rates the same as bank rates?</h3>
+                    <p class="text-gray-700">These are mid-market rates used by banks and financial institutions. Actual exchange rates offered by banks or money transfer services may differ due to their margins and fees.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+  <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8 mt-10">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+    <!-- About -->
+    <div>
+      <h3 class="text-lg font-semibold text-white mb-3">About Us</h3>
+      <p class="text-sm">
+        We provide live currency exchange rates for Kenya and worldwide. 
+        Trusted by users to stay updated with USD to KES and more.
+      </p>
+    </div>
+    
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-lg font-semibold text-white mb-3">Quick Links</h3>
+      <ul class="space-y-2">
+        <li><a href="index.html" class="hover:text-white">Home</a></li>
+        <li><a href="about.html" class="hover:text-white">About Us</a></li>
+        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+        <li><a href="privacy.html" class="hover:text-white">Privacy Policy</a></li>
+      </ul>
+    </div>
+    
+    <!-- Contact -->
+    <div>
+      <h3 class="text-lg font-semibold text-white mb-3">Get in Touch</h3>
+      <p class="text-sm">Email: <a href="mailto:support@maxpilot8693.github.io" class="text-blue-400">support@maxpilot8693.github.io</a></p>
+      <p class="text-sm">Location: Nairobi, Kenya</p>
+    </div>
+  </div>
+
+  <div class="text-center text-gray-500 text-sm mt-6">
+    © <span id="year"></span> Kenya Currency Converter. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
